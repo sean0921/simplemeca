@@ -4,6 +4,9 @@ import sys
 from time import sleep
 import pygmt
 
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
+
 if len(sys.argv) < 5:
     print(f"Usage: python3 {sys.argv[0]} <strike> <dip> <rake(slip)> <color of T-axis> <title>")
     sys.exit(1)
@@ -23,20 +26,19 @@ else:
             title+=" "
 
 if not ( ( 0 <= strike <= 360 ) and ( 0 <= dip <= 90 ) and ( -180 <= rake <= 180 ) ):
-    print("Format is not right!")
-    print("(0 <= strike <= 360 && 0 <= dip <= 90 && -180 <= rake <= 180)")
+    eprint("Format is not right!")
+    eprint("(0 <= strike <= 360 && 0 <= dip <= 90 && -180 <= rake <= 180)")
     sys.exit(1)
-
 tcolor=tcolor_str.split(sep='/')
 if ( len(tcolor) != 3 ):
-    print("Format of color is invalid! (<0~255>/<0~255>/<0~255>)")
+    eprint("Format of color is invalid! (<0~255>/<0~255>/<0~255>)")
     sys.exit(1)
 
 for i in range(0,len(tcolor)):
     tcolor[i]=float(tcolor[i])
 
 if not ( ( 0 <= tcolor[0] <= 255 ) and ( 0 <= tcolor[1] <= 255 ) and ( 0 <= tcolor[2] <= 255 ) ):
-    print("Format of color is invalid! (<0~255>/<0~255>/<0~255>)")
+    eprint("Format of color is invalid! (<0~255>/<0~255>/<0~255>)")
     sys.exit(1)
 
 ##### main program
@@ -45,8 +47,6 @@ pygmt.config(FONT_TITLE=12)
 pygmt.config(MAP_TITLE_OFFSET='-1c')
 fig = pygmt.Figure()
 
-
-print(title)
 # generate a basemap near Washington state showing coastlines, land, and water
 fig.basemap(
     region=[-1, 1, -1, 1],
