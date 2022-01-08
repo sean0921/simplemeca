@@ -65,4 +65,7 @@ fig.text(x=0, y=0, text=f'{strike}/{dip}/{rake}', offset='0/2',font='8p')
 
 fig.show(method='external')
 sleep(0.1)
-fig.savefig('test_meca.png')
+if len(sys.argv) >= 6:
+    fig.savefig(f'{title}.png')
+else:
+    fig.savefig('test_meca.png')
