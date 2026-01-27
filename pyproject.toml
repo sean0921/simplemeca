@@ -3,12 +3,11 @@ name = "simplemeca-flask"
 version = "1.2.0"
 description = "Simple Focal Mechanism Generator based on PyGMT"
 authors = [{ name = "Sean Ho", email = "sean.li.shin.ho@gmail.com" }]
-requires-python = ">=3.11,<4"
+requires-python = ">=3.12,<4"
 readme = "README.md"
 license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
