@@ -1,6 +1,6 @@
 [project]
-name = "simplemeca-flask"
-version = "1.2.0"
+name = "simplemeca"
+version = "2.0.0.alpha.1"
 description = "Simple Focal Mechanism Generator based on PyGMT"
 authors = [{ name = "Sean Ho", email = "sean.li.shin.ho@gmail.com" }]
 requires-python = ">=3.12,<4"
