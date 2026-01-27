@@ -1,21 +1,34 @@
-[tool.poetry]
+[project]
 name = "simplemeca-flask"
 version = "1.2.0"
 description = "Simple Focal Mechanism Generator based on PyGMT"
-authors = ["Sean Ho <sean.li.shin.ho@gmail.com>"]
-license = "MIT"
+authors = [{ name = "Sean Ho", email = "sean.li.shin.ho@gmail.com" }]
+requires-python = ">=3.11,<4"
 readme = "README.md"
-packages = [{include = "simplemeca_flask"}]
+license = "MIT"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "pygmt>=0.16.0,<0.17",
+    "Flask>=3.1.1,<4",
+    "Flask-Cors>=6.0.1,<7",
+    "gunicorn>=23.0.0,<24",
+    "setuptools>=80.9.0,<81",
+    "flask-swagger-ui>=5.21.0,<6",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-pygmt = "^0.16.0"
-Flask = "^3.1.1"
-Flask-Cors = "^6.0.1"
-gunicorn = "^23.0.0"
-setuptools = "^80.9.0"
-flask-swagger-ui = "^5.21.0"
+[tool.uv]
+
+[tool.uv.build-backend]
+module-name = ["simplemeca_flask"]
+module-root = ""
+namespace = true
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.9.26,<0.10.0"]
+build-backend = "uv_build"
