@@ -1,3 +1,10 @@
+## TODO
+- [x] let fastapi basic function works
+- [ ] let uvicorn basic function works
+- [ ] check config format again
+- [ ] recover pygmt integration
+- [ ] ...
+
 # Simple Focal Mechanism Generator based on PyGMT
 
 ![](docs/demo.webp)
